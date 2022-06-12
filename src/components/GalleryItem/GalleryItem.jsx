@@ -1,6 +1,9 @@
-function ShowSingleGalleryItem({ GalleryItemObj }) {
+
+function GalleryItems({ GalleryItemObj, title, path }) {
+    console.log('Hellow', GalleryItemObj,);
     return (
         <>
+            
             <ul>
                 <li>
                     {GalleryItemObj.title}
@@ -8,9 +11,13 @@ function ShowSingleGalleryItem({ GalleryItemObj }) {
                 <li>
                     {GalleryItemObj.description}
                 </li>
+                <img src={GalleryItemObj.path} />
             </ul>
         </>
+
+
+
     )
 }
 
-export default ShowSingleGalleryItem;
+export default GalleryItems;

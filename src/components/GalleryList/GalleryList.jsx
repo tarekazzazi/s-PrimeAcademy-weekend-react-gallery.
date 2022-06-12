@@ -1,25 +1,20 @@
-import ShowSingleGalleryItem from './ShowSingleGalleryItem'
+import GalleryItems from "../GalleryItem/GalleryItem";
 function GalleryList({ galleryList }) {
+
     console.log('this is ', galleryList);
     return (
         <>
-            {/* Images*/}
-            <img className="AllPhotoUpdates" src="images/goat_small.jpg" />
-            <img className="AllPhotoUpdates" src="images/siberian_husky.jpg" />
-            <img className="AllPhotoUpdates" src="images/camera.jpg" />
-            <img className="AllPhotoUpdates" src="images/hammock.jpg" />
-            <img className="AllPhotoUpdates" src="images/mtb.jpg" />
-            <img className="AllPhotoUpdates" src="images/family.jpg" />
-
-            {/* Text Display*/}
             <div className="container">
                 {galleryList.map(GalleryItemObj => (
-                    <div className="card" key={GalleryItemObj.id}>
-                        <ShowSingleGalleryItem
-                            key={GalleryItemObj.id}
-                            GalleryItemObj={GalleryItemObj}
-                        />
 
+                    <div className="img" key={GalleryItemObj.id}>
+                          <GalleryItems
+                            GalleryItemObj={GalleryItemObj}
+                            title={GalleryItemObj.title}
+                            path={GalleryItemObj.path}
+                          
+                          />
+                        
                     </div>
                 ))}
 
