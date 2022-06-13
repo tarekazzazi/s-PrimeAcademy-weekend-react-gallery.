@@ -5,13 +5,13 @@ function GalleryList({ galleryList }) {
     return (
         <>
             <div className="container">
-                {galleryList.map(GalleryItemObj => (
+                {galleryList.map(props => (
 
-                    <div className="img" key={GalleryItemObj.id}>
+                    <div className="img" key={props.id}>
                           <GalleryItems
-                            GalleryItemObj={GalleryItemObj}
-                            title={GalleryItemObj.title}
-                            path={GalleryItemObj.path}
+                            props={props}
+                            title={props.title}
+                            path={props.path}
                           
                           />
                         

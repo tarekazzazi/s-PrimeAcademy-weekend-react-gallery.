@@ -1,23 +1,29 @@
+import { useState } from "react";
+function GalleryItems({ props }) {
+    console.log('Hellow', props,);
 
-function GalleryItems({ GalleryItemObj, title, path }) {
-    console.log('Hellow', GalleryItemObj,);
+    const renderThisProp = () => {
+        console.log('hello');
+        render(
+           
+        )
+    }
+
     return (
         <>
-            
             <ul>
-                <li>
-                    {GalleryItemObj.title}
-                </li>
-                <li>
-                    {GalleryItemObj.description}
-                </li>
-                <img src={GalleryItemObj.path} />
+                <div className="singleItem">
+                    <button onClick={renderThisProp}>
+                        <img src={props.path} />
+                    </button>
+                    {/* {props.title} */}
+                    {/* {props.description} */}
+
+                </div>
             </ul>
         </>
-
-
-
     )
+
 }
 
 export default GalleryItems;
