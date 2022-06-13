@@ -5,12 +5,14 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  
+  const [galleryList, setGalleryList] = useState([]);
 
   useEffect(() => {
     GetGalleryData();
   }, []);
 
-  const [galleryList, setGalleryList] = useState([]);
+ 
 
   const GetGalleryData = () => {
     axios({

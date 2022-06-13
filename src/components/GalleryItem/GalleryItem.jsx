@@ -2,23 +2,19 @@ import { useState } from "react";
 function GalleryItems({ props }) {
     console.log('Hellow', props,);
 
-    const renderThisProp = () => {
-        console.log('hello');
-        render(
-           
-        )
-    }
+
+
+    const [isInImageMode, setisImageMode] = useState(true);
 
     return (
         <>
             <ul>
                 <div className="singleItem">
-                    <button onClick={renderThisProp}>
-                        <img src={props.path} />
-                    </button>
-                    {/* {props.title} */}
-                    {/* {props.description} */}
+                    <div onClick={() => setisImageMode(!isInImageMode)}>
+                        {isInImageMode ? < img src={props.path} /> : <div>{props.title} {props.description}</div>}
 
+
+                    </div>
                 </div>
             </ul>
         </>
