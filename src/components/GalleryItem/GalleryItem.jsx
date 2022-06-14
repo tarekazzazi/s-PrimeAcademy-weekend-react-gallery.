@@ -1,6 +1,6 @@
 import { useState } from "react";
 function GalleryItems({ props, onLike }) {
-    console.log('Hellow', props,);
+    console.log('props', props,);
 
 
 
