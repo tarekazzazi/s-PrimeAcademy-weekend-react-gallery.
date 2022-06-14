@@ -1,7 +1,7 @@
 import GalleryItems from "../GalleryItem/GalleryItem";
-function GalleryList({ galleryList }) {
+function GalleryList({ galleryList, onLike }) {
 
-    console.log('this is ', galleryList);
+    console.log('this is ', galleryList, onLike);
     return (
         <>
             <div className="container">
@@ -12,6 +12,8 @@ function GalleryList({ galleryList }) {
                             props={props}
                             title={props.title}
                             path={props.path}
+                            onLike={onLike}
+                            
                           
                           />
                         

@@ -5,14 +5,27 @@ import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  
+
   const [galleryList, setGalleryList] = useState([]);
 
   useEffect(() => {
     GetGalleryData();
   }, []);
 
- 
+  const LikeGalleryItem = (id) => {
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${id}`
+    })
+    .then(res => {
+      console.log(`PUT /gallery/like${id}`);
+      GetGalleryData();
+    })
+    .catch(err => {
+      console.log(`error`, err);
+    });
+    
+  }
 
   const GetGalleryData = () => {
     axios({
@@ -40,12 +53,12 @@ function App() {
       
       <GalleryList
         galleryList={galleryList}
+        onLike={LikeGalleryItem}
       />
 
     </div >
 
   );
-
   
 }
 
