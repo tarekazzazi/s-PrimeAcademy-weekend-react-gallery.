@@ -18,9 +18,12 @@ function GalleryItems({ props, onLike }) {
                     {/* Likes section*/}
                     <div>
                         <button onClick={() => onLike(props.id)}>love it</button>
-                        <div>{props.likes} people love this!</div>
+                        {props.likes === 0 ?
+                            <h5> No people love this:( </h5> :
+                            <h5>{props.likes} people love this!</h5>}
+
                     </div>
-                     
+
                 </div>
             </ul>
         </>
